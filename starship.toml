@@ -1,9 +1,3 @@
-#right_format = """
-#$cmd_duration\
-#\n
-#$all
-#"""
-#[  ](bg:#a3aed2 fg:#090c0c)\
 format = """
 [](bg:#a3aed2)\
 $os\
@@ -12,32 +6,27 @@ $directory\
 $git_branch\
 $git_status\
 $fill\
-$cmd_duration\
+$perl\
 $sudo\
+$cmd_duration\
+$status\
 \n└❯ $character
 """
 
-#success_symbol = "[❯](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
-#[](fg:#394260 bg:#212736)\
-#$nodejs\
-#$rust\
-#$golang\
-#$php\
+[status]
+disabled = false
+format = '[$symbol]($style)'
+success_symbol = '✅' 
 
 [sudo]
 disabled = false
-format = '[ $symbol]($style)'
-style = 'bg:#1d2230'
-
-[memory_usage]
-#symbol = ""
-disabled = false
+format = '[$symbol]($style)'
+style = 'bg:#1d2230 fg:#769ff0'
 
 [os]
 disabled = false
 format = '[ $symbol]($style)'
 style = 'bg:#a3aed2 fg:#090c0c'
-
 
 [fill]
 symbol = ' '
@@ -47,7 +36,7 @@ style = 'bg:#1d2230'
 min_time = 0
 show_milliseconds = true
 format = "[ $duration ]($style)"
-style = 'bold italic fg:red bg:#1d2230'
+style = 'bg:#94c9a9 fg:#1d2230'
 
 [username]
 style_user = 'bold fg:#a3aed2 bg:#1d2230'
@@ -59,11 +48,10 @@ show_always = true
 [character]
 success_symbol = "[](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
 error_symbol = "[](bold red)"
-#success_symbol = "[❯](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
 
 [directory]
 style = "bg:#a3aed2 fg:#090c0c"
-format = "[$path ]($style)"
+format = "[ $path ]($style)"
 truncation_length = 6
 truncation_symbol = "…/"
 
@@ -83,7 +71,8 @@ style = "bg:#394260"
 format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
 
 [perl]
-symbol = " "
+symbol = "🐪"
+format = '[[ $symbol ($version)|](fg:#769ff0 bg:#212736)]($style)'
 
 [nix_shell]
 symbol = " "
@@ -108,8 +97,3 @@ symbol = ""
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
-[time]
-disabled = false
-time_format = "%R" # Hour:Minute Format
-style = "bg:#1d2230"
-format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
