@@ -101,7 +101,7 @@ style = 'bg:#94c9a9 fg:#1d2230'
 [username]
 style_user = 'bold fg:#a3aed2 bg:#1d2230'
 style_root = 'red bold'
-format = '[ $user ]($style)'
+format = '[ $user]($style)'
 disabled = false
 show_always = true
 
