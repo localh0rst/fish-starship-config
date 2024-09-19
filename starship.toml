@@ -1,9 +1,7 @@
 format = """
 [](bg:#a3aed2)\
 $os\
-$username\
-@\
-$hostname\
+$username@$hostname\
 $directory\
 $git_branch\
 $git_status\
@@ -20,7 +18,7 @@ $character
 
 [hostname]
 ssh_only = true
-format = '[$ssh_symbol](bold blue) on [$hostname](bold red) '
+format = '[$hostname](bold red) '
 #trim_at = '.companyname.com'
 disabled = false
 
