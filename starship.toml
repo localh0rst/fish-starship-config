@@ -18,6 +18,12 @@ $character
 #┖\\[$directory\\]\
 #┖─❯► $character
 
+[hostname]
+ssh_only = true
+format = '[$ssh_symbol](bold blue) on [$hostname](bold red) '
+#trim_at = '.companyname.com'
+disabled = false
+
 [status]
 disabled = false
 format = '[$symbol]($style)'
