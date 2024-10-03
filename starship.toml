@@ -1,12 +1,14 @@
 format = """
 [](bg:#a3aed2)\
 $os\
-$username@$hostname\
+$username\
+$hostname\
 $directory\
 $git_branch\
 $git_status\
 $fill\
 $perl\
+$python\
 $sudo\
 $cmd_duration\
 $status\n\
@@ -17,8 +19,9 @@ $character
 #┖─❯► $character
 
 [hostname]
-ssh_only = true
-format = '[$hostname](bold red) '
+ssh_only = false
+style = 'bg:#1d2230 fg:green'
+format = '[@](bold fg:#FFFFFF bg:#1d2230)[$hostname ]($style)'
 #trim_at = '.companyname.com'
 disabled = false
 
@@ -138,6 +141,11 @@ format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
 [perl]
 symbol = "🐪"
 format = '[[ $symbol ($version)|](fg:#769ff0 bg:#212736)]($style)'
+
+[python]
+symbol = "🐍 "
+pyenv_version_name = true
+style = 'bg:#1d2230 fg:#769ff0'
 
 [nix_shell]
 symbol = " "
